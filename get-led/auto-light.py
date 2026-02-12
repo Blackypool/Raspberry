@@ -3,18 +3,19 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 
-
 led = 26
-state = 0
 GPIO.setup(led, GPIO.OUT)
 
+state = 0
 
-push = 13
 
-GPIO.setup(push, GPIO.IN)
+photo_tr = 6
+GPIO.setup(photo_tr, GPIO.IN)
 
+
+period = 1.0
 while True:
-    if GPIO.input(push):
+    if not GRIO.input(photo_tr):
         state = not state
         GPIO.output(led, state)
-        time.sleep(0.2)
+        time.sleep(period)
