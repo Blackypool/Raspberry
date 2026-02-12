@@ -15,7 +15,7 @@ GPIO.setup(photo_tr, GPIO.IN)
 
 period = 1.0
 while True:
-    if not GRIO.input(photo_tr):
+    if not GPIO.input(photo_tr):
         state = not state
         GPIO.output(led, state)
         time.sleep(period)
