@@ -3,9 +3,6 @@ import RPi.GPIO as GPIO
 import time
 
 #режим GPIO.BCM обращения к GPIO пинам
-import RPi.GPIO as GPIO
-GPIO.setmode(GPIO.BCM)
-
 GPIO.setmode(GPIO.BCM)
 
 #переменная с номером GPIO-пина
@@ -25,3 +22,5 @@ while True:
     state = not state
     time.sleep(period)
     period = period * 0.8
+
+GPIO.output(led, 0)
